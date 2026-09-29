@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BigChange × SCS Group — Commercial Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bc-dark:#0A2240;--bc-blue:#0072CE;--bc-green:#28E289;--bc-orange:#FF6B00;
+  --bc-cyan:#00C2CB;--bc-white:#fff;--bc-gray-50:#f7f9fc;--bc-gray-100:#eef1f6;
+  --bc-gray-200:#d8dce8;--bc-gray-400:#9298b0;--bc-gray-600:#5c6180;
+  --bc-gray-800:#2d3250;--bc-radius:14px;
+  --bc-shadow:0 4px 24px rgba(0,0,0,.06);--bc-shadow-lg:0 12px 48px rgba(0,0,0,.12)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bc-gray-50);color:var(--bc-gray-800);line-height:1.65;-webkit-font-smoothing:antialiased}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(24px);border-bottom:1px solid var(--bc-gray-100);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.07)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:28px}
+.nav-links{display:flex;gap:14px}
+.nav-links a{font-size:11.5px;font-weight:600;color:var(--bc-gray-600);text-decoration:none;white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--bc-blue)}
+
+.hero{position:relative;min-height:580px;background:linear-gradient(140deg,#061828 0%,#0A2240 40%,#0a3668 75%,#0c4a8a 100%);display:flex;align-items:center;justify-content:center;padding:150px 32px 90px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 90%,rgba(40,226,137,.12) 0%,transparent 50%),radial-gradient(ellipse at 90% 10%,rgba(0,194,203,.1) 0%,transparent 50%),radial-gradient(ellipse at 50% 50%,rgba(0,114,206,.08) 0%,transparent 70%)}
+.hero-grid{position:absolute;inset:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:52px 52px}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+.hero-orb-1{width:500px;height:500px;background:rgba(40,226,137,.06);top:-100px;right:-100px}
+.hero-orb-2{width:400px;height:400px;background:rgba(0,114,206,.08);bottom:-80px;left:-80px}
+.hero-content{position:relative;z-index:2;max-width:880px;text-align:center}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(40,226,137,.1);border:1px solid rgba(40,226,137,.22);border-radius:50px;padding:6px 20px;font-size:11.5px;font-weight:700;color:var(--bc-green);letter-spacing:.07em;text-transform:uppercase;margin-bottom:32px;animation:fadeInDown .6s ease-out}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--bc-green);animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(36px,4.8vw,56px);font-weight:400;color:var(--bc-white);line-height:1.1;margin-bottom:22px;animation:fadeInUp .7s ease-out .1s both}
+.hero h1 span{background:linear-gradient(135deg,var(--bc-green) 0%,var(--bc-cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:17px;color:rgba(255,255,255,.55);max-width:680px;margin:0 auto 40px;line-height:1.7;animation:fadeInUp .7s ease-out .25s both}
+.hero-stat-row{display:flex;justify-content:center;gap:0;animation:fadeInUp .7s ease-out .4s both;flex-wrap:wrap;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;max-width:580px;margin:0 auto}
+.hero-stat{flex:1;padding:18px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.07)}
+.hero-stat:last-child{border-right:none}
+.hero-stat .num{font-size:26px;font-weight:800;color:var(--bc-white)}
+.hero-stat .num em{font-style:normal;background:linear-gradient(135deg,var(--bc-green),var(--bc-cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stat .lbl{font-size:10.5px;font-weight:500;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-top:5px}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+
+.section{max-width:1160px;margin:0 auto;padding:64px 32px}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--bc-blue);margin-bottom:12px}
+.section-tag::before{content:'';width:20px;height:2px;background:linear-gradient(90deg,var(--bc-blue),var(--bc-green));border-radius:2px}
+.section h2{font-family:'DM Serif Display',serif;font-size:clamp(28px,3.5vw,42px);font-weight:400;color:var(--bc-dark);line-height:1.18;margin-bottom:16px}
+.section .subtitle{font-size:16px;color:var(--bc-gray-600);max-width:720px;margin-bottom:48px;line-height:1.7}
+
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--bc-white);border-radius:var(--bc-radius);padding:28px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:var(--bc-shadow-lg);border-color:rgba(0,114,206,.12)}
+.card-icon{font-size:22px;margin-bottom:14px}
+.card h3{font-size:14.5px;font-weight:700;color:var(--bc-dark);margin-bottom:9px;line-height:1.35}
+.card p{font-size:13px;color:var(--bc-gray-600);line-height:1.65;flex:1}
+
+.system-card2{background:var(--bc-gray-50);border:1px solid var(--bc-gray-100);border-radius:var(--bc-radius);padding:22px}
+.system-card2 p{font-size:13px;color:var(--bc-gray-800);line-height:1.65;margin-top:10px}
+.s-pill{display:inline-block;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.s-pill-out{background:#fff3f3;color:#b91c1c;border:1px solid #fca5a5}
+.s-pill-notneeded{background:var(--bc-gray-100);color:var(--bc-gray-600);border:1px solid var(--bc-gray-200)}
+.s-pill-replace{background:rgba(40,226,137,.1);color:#1a8a5a;border:1px solid rgba(40,226,137,.3)}
+.s-title{font-size:14px;font-weight:700;color:var(--bc-dark)}
+.system-in{border-radius:12px;padding:20px 22px;background:rgba(40,226,137,.05);border:1px solid rgba(40,226,137,.2)}
+.system-in .s-label{font-size:10px;font-weight:700;color:#1a8a5a;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.system-in p{font-size:13px;color:var(--bc-gray-800);line-height:1.65}
+
+.check{display:flex;align-items:start;gap:10px;font-size:13px;color:var(--bc-gray-800);line-height:1.55}
+.check .tick{color:var(--bc-green);font-weight:700;flex-shrink:0;margin-top:1px}
+
+.ftab{padding:9px 16px;border-radius:8px;border:1px solid var(--bc-gray-200);background:var(--bc-white);font-size:12.5px;font-weight:600;color:var(--bc-gray-600);cursor:pointer;transition:all .2s;font-family:'Plus Jakarta Sans',sans-serif}
+.ftab:hover{border-color:var(--bc-blue);color:var(--bc-blue)}
+.ftab.active{background:var(--bc-blue);color:#fff;border-color:var(--bc-blue)}
+.feature-panel{background:var(--bc-white);border-radius:var(--bc-radius);padding:28px 32px;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow)}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.ba-card{border-radius:var(--bc-radius);padding:28px;border:1px solid}
+.ba-bad{background:#fff3f3;border-color:#fca5a5}
+.ba-bad .ba-tag{color:#b91c1c}
+.ba-bad p{color:#7f1d1d}
+.ba-good{background:rgba(40,226,137,.05);border-color:rgba(40,226,137,.2)}
+.ba-good .ba-tag{color:#1a8a5a}
+.ba-good p{color:var(--bc-gray-800)}
+.ba-tag{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px}
+.ba-card p{font-size:13px;line-height:1.7;margin-bottom:8px}
+
+.price-box-dark{background:linear-gradient(135deg,var(--bc-dark),#0d2952);border-radius:var(--bc-radius);padding:32px}
+.price-box-main{background:var(--bc-white);border-radius:var(--bc-radius);border:2px solid var(--bc-blue);box-shadow:var(--bc-shadow-lg);overflow:hidden;display:flex;flex-direction:column}
+
+.step-card{background:var(--bc-white);border-radius:var(--bc-radius);border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);padding:26px}
+.step-card.active-step{border-color:var(--bc-blue);border-width:2px;box-shadow:var(--bc-shadow-lg)}
+.step-num{font-size:11px;font-weight:700;color:var(--bc-blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+.step-title{font-size:16px;font-weight:700;color:var(--bc-dark);margin-bottom:8px}
+.step-body{font-size:13px;color:var(--bc-gray-600);line-height:1.65}
+
+.contact-section{background:linear-gradient(135deg,var(--bc-dark),#0d2952);border-radius:var(--bc-radius);padding:48px;display:flex;align-items:center;gap:40px;color:#fff}
+.contact-avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--bc-blue),var(--bc-green));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:-.5px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+.case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.case-card{background:var(--bc-white);border-radius:var(--bc-radius);overflow:hidden;border:1px solid var(--bc-gray-100);box-shadow:var(--bc-shadow);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.case-card:hover{transform:translateY(-4px);box-shadow:var(--bc-shadow-lg)}
+.case-thumb{width:100%;height:170px;overflow:hidden;background:var(--bc-dark);position:relative}
+.case-thumb img{width:100%;height:100%;object-fit:cover}
+.case-body{padding:22px;flex:1}
+.case-body .sector{font-size:10.5px;font-weight:700;color:var(--bc-blue);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.case-body h4{font-size:15px;font-weight:700;color:var(--bc-dark);margin-bottom:8px}
+.case-body p{font-size:13px;color:var(--bc-gray-600);line-height:1.55}
+.case-body .read-more{margin-top:12px;font-size:12px;font-weight:600;color:var(--bc-blue)}
+.footer{text-align:center;padding:48px 32px;font-size:12px;color:var(--bc-gray-400)}
+
+@media(max-width:800px){
+  .nav-links{display:none}
+  .hero{padding:120px 20px 60px}
+  .section{padding:48px 20px}
+  .grid-4,.grid-3,.grid-2{grid-template-columns:1fr}
+  .contact-section{flex-direction:column;text-align:center;padding:36px 20px}
+  .feature-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo"><img src="https://www.martinport.com/wp-content/uploads/2022/05/bigchange-logo.webp" alt="BigChange"/></div>
+    <div class="nav-links">
+      <a href="#summary">Why BigChange</a>
+      <a href="#systems">Consolidation</a>
+      <a href="#features">Features</a>
+      <a href="#implementation">Implementation</a>
+      <a href="#cases">Case Studies</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#next">Next Steps</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Proposal · SCS Group</div>
+    <h1>One system, not two. One bill, not two.<br><span>Same money you're already spending.</span></h1>
+    <p>Your job tracking and your vehicle tracking are two separate line items today that don't talk to each other. BigChange gives you both, natively connected, in a single platform — engineers on tools, GAS-certified compliance, hardwired tracking and AI-assisted dispatch, all in one place, for the same money you're paying now.</p>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="num"><em>28</em></div>
+        <div class="lbl">24 field · 4 office (to start)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><em>2→1</em></div>
+        <div class="lbl">Job tracking + vehicle tracking, one system</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num"><em>24/7</em></div>
+        <div class="lbl">UK-based support, Leeds</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="summary">
+  <div class="reveal">
+    <div class="section-tag">Why BigChange</div>
+    <h2>Same spend. One system instead of two that don't talk.</h2>
+    <p class="subtitle">Job, you were clear on the call: job sheets and tracking are the two things that actually matter, everything else is a bonus. That's exactly where BigChange is strongest — and your rolling vehicle tracking contract means there's nothing locking you into switching that part across today.</p>
+  </div>
+
+  <div class="grid-4">
+    <div class="card reveal">
+      <div class="card-icon">📡</div>
+      <h3>Hardwired vehicle tracking, built in — not bolted on</h3>
+      <p>Free of charge, free installation — we de-fit your current trackers and hardwire ours in. No more paying for tracking and job management as two separate products that don't reconcile against each other.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📋</div>
+      <h3>Job sheets, fully customisable</h3>
+      <p>Your worksheets and job sheets are built with you at onboarding and stay yours to edit afterwards — mandatory workflows, photo evidence, time/date/location stamps, GAS and electrical compliance packs included.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🤖</div>
+      <h3>AI scheduling — the manual lookup replaced</h3>
+      <p>Today the electrical/gas manager checks the tracker and picks manually. BigChange's scheduling assistant does that in seconds: right skill (GAS, FGAS), closest engineer, true cost to serve — one click to book.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🧾</div>
+      <h3>Quotes and invoices — no more email and a book</h3>
+      <p>Quotes and invoices currently go out manually by email, tracked in a book. BigChange builds them from your branded templates, with digital acceptance and automatic QuickBooks export — no re-keying into your finance system.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📦</div>
+      <h3>Stock, tracked properly — not manually in the yard</h3>
+      <p>You told us yard stock tracking is "a pain in the ass" done manually. BigChange tracks parts, quantities and van stock automatically, with reorder alerts before you run short.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">💳</div>
+      <h3>Get paid on the day, not weeks later</h3>
+      <p>Stripe payment links and on-site card payment, at no extra platform cost — just Stripe's standard processing fee. Money in your account the same day, instead of chasing it later.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">🚫</div>
+      <h3>No credit system, no bolt-on modules</h3>
+      <p>You've seen how Job Logic works — buy credits, pay again for every extra feature, never quite sure what you're actually spending each month. Everything you've seen today is one user-per-month price, nothing metered on top.</p>
+    </div>
+    <div class="card reveal">
+      <div class="card-icon">📞</div>
+      <h3>24/7 UK-based support — not a call centre abroad</h3>
+      <p>Implementation and support both run out of Leeds. Engineers get a direct line from their app; you're not stuck in an offshore ticket queue.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bc-white);padding:0;">
+  <div class="section" id="systems">
+    <div class="reveal">
+      <div class="section-tag">Consolidation</div>
+      <h2>Two systems that don't reconcile, replaced by one that does.</h2>
+      <p class="subtitle">Job tracking and vehicle tracking sit as two separate costs today. BigChange folds both into one platform and one bill.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;" class="reveal">
+      <div class="system-card2">
+        <div class="s-pill s-pill-replace">Full replace</div>
+        <div class="s-title">Job tracking system</div>
+        <p>Job sheets, scheduling, CRM, quotes and invoicing all move onto BigChange — with mandatory workflows and full audit trail your current job-sheet-based vehicle checks and timesheets don't give you.</p>
+      </div>
+      <div class="system-card2">
+        <div class="s-pill s-pill-replace">Brought in, free of charge</div>
+        <div class="s-title">Vehicle tracking</div>
+        <p>Your rolling contract means there's no penalty to switch. BigChange includes hardwired tracking natively — de-fit and install free — reconciling automatically against timesheets and job costings.</p>
+      </div>
+      <div class="system-card2">
+        <div class="s-pill s-pill-notneeded">Kept, exported cleanly</div>
+        <div class="s-title">QuickBooks</div>
+        <p>You keep QuickBooks for your returns. BigChange exports financials straight into QuickBooks format — no manual re-entry, no separate finance system to fully replace.</p>
+      </div>
+      <div class="system-in" style="grid-column:span 3;">
+        <div class="s-label">✓ BigChange — one platform</div>
+        <p>CRM with parent/child sites (e.g. your NHS contracts) → job sheets and worksheets, fully customisable → AI scheduling assistant, matched by skill (GAS, FGAS, electrical) and true cost to serve → hardwired vehicle tracking, natively reconciled against timesheets → quotes, invoices and Stripe payments → QuickBooks export → one 24/7 UK-based support team. One system for 24 field engineers and 4 office users to start, no credits, no bolt-ons.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="reveal">
+    <div class="section-tag">The Detail</div>
+    <h2>The flow from the demo — job sheets, tracking, and everything either side.</h2>
+    <p class="subtitle">A high-level run-through of what you saw, focused on the two things you said matter most.</p>
+  </div>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;" class="reveal">
+    <button class="ftab active" onclick="showTab('t-sched',this)">📅 Scheduling & Tracking</button>
+    <button class="ftab" onclick="showTab('t-job',this)">📋 Job Sheets & Compliance</button>
+    <button class="ftab" onclick="showTab('t-fin',this)">🧾 Quoting & Financials</button>
+    <button class="ftab" onclick="showTab('t-app',this)">📱 Engineer App</button>
+  </div>
+
+  <div id="t-sched" class="feature-panel reveal">
+    <div style="font-size:14px;font-weight:700;color:var(--bc-dark);margin-bottom:16px;">Scheduling & Tracking — hardwired, and reconciled automatically</div>
+    <div class="feature-grid">
+      <div class="check"><span class="tick">✓</span><span>Hardwired vehicle tracking, free installation — de-fit your current units, install ours, no downtime cost to you</span></div>
+      <div class="check"><span class="tick">✓</span><span>Daily, weekly, monthly and list schedule views, colour-coded by live job status — on route, on site, complete or no access</span></div>
+      <div class="check"><span class="tick">✓</span><span>Travel-time alerts using live Google traffic — flags when two jobs are booked too close together for an engineer to make both</span></div>
+      <div class="check"><span class="tick">✓</span><span>AI scheduling assistant — for a reactive job needing GAS or FGAS, shows the right-skilled engineer, distance, ETA and true cost to send, one click to book</span></div>
+      <div class="check"><span class="tick">✓</span><span>Customer ETA alerts — Uber/DPD-style live tracking link and "your engineer is on route" notifications, at no extra cost</span></div>
+      <div class="check"><span class="tick">✓</span><span>Timesheets built from job events, reconciled against vehicle tracking data automatically — accurate hours without a separate clock in/out step</span></div>
+      <div class="check"><span class="tick">✓</span><span>MOT, road tax and service alerts for the whole fleet, with forced 7-day vehicle checks to keep the business compliant</span></div>
+      <div class="check"><span class="tick">✓</span><span>Holiday and absence requests through the app, automatically blocking the schedule so no work gets allocated on an approved day off</span></div>
+    </div>
+  </div>
+
+  <div id="t-job" class="feature-panel reveal" style="display:none;">
+    <div style="font-size:14px;font-weight:700;color:var(--bc-dark);margin-bottom:16px;">Job Sheets & Compliance — the two things you said matter most</div>
+    <div class="feature-grid">
+      <div class="check"><span class="tick">✓</span><span>Fully customisable job sheets and worksheets, built with your own branding and forms at onboarding</span></div>
+      <div class="check"><span class="tick">✓</span><span>Mandatory workflows — can't assign or finish a job until required steps (risk assessment, photos, signature) are done</span></div>
+      <div class="check"><span class="tick">✓</span><span>Photo evidence, time/date/location stamped and annotatable — full proof of work for every job, every site</span></div>
+      <div class="check"><span class="tick">✓</span><span>GAS and electrical compliance packs built in, alongside skills matrix tracking (GAS Safe, FGAS) with automatic expiry alerts</span></div>
+      <div class="check"><span class="tick">✓</span><span>Stock and equipment tracked properly — parts, quantities, van stock and reorder alerts, replacing manual yard tracking</span></div>
+      <div class="check"><span class="tick">✓</span><span>Risk assessments and method statements through the app, with conditional branching based on the engineer's answers</span></div>
+      <div class="check"><span class="tick">✓</span><span>Job Ready — AI summary of site/asset history and any failed risk assessments before the engineer even arrives</span></div>
+      <div class="check"><span class="tick">✓</span><span>JustAsk — ask your own data a plain-English question (e.g. "what part did we fit at this site last time") and get an answer instantly</span></div>
+    </div>
+  </div>
+
+  <div id="t-fin" class="feature-panel reveal" style="display:none;">
+    <div style="font-size:14px;font-weight:700;color:var(--bc-dark);margin-bottom:16px;">Quoting & Financials — no more email and a book</div>
+    <div class="feature-grid">
+      <div class="check"><span class="tick">✓</span><span>Quotes built from parts sets or free text, showing live margin — adjust the % and the selling price updates automatically</span></div>
+      <div class="check"><span class="tick">✓</span><span>Branded quote templates, built from your own site during onboarding — simple one-pagers or fuller documents for bigger jobs</span></div>
+      <div class="check"><span class="tick">✓</span><span>Digital acceptance link with T&Cs, timestamped the moment the customer signs — automatically raises the job</span></div>
+      <div class="check"><span class="tick">✓</span><span>Client-specific rates (e.g. your NHS/housing association contracts) — fixed price, first-hour-included, or however each contract works today</span></div>
+      <div class="check"><span class="tick">✓</span><span>Purchase orders raised from the app, with an AI purchase invoice scanner matching supplier invoices against the PO automatically</span></div>
+      <div class="check"><span class="tick">✓</span><span>Stripe payment links and on-site card payment — no extra platform fee, just Stripe's standard processing rate</span></div>
+      <div class="check"><span class="tick">✓</span><span>One-click QuickBooks export in the correct format — no manual re-entry into your finance system</span></div>
+      <div class="check"><span class="tick">✓</span><span>Reporting suite — quote conversion, overdue invoices, engineer profitability — plus JustAsk to query it in plain English</span></div>
+    </div>
+  </div>
+
+  <div id="t-app" class="feature-panel reveal" style="display:none;">
+    <div style="font-size:14px;font-weight:700;color:var(--bc-dark);margin-bottom:16px;">Engineer App — works on the tablets you already supply</div>
+    <div class="feature-grid">
+      <div class="check"><span class="tick">✓</span><span>Runs on iOS or Android, portrait or landscape — on the tablets already funded through your phone contract's kit fund</span></div>
+      <div class="check"><span class="tick">✓</span><span>Fully offline capable — engineers complete job sheets with no signal, everything syncs the moment signal returns</span></div>
+      <div class="check"><span class="tick">✓</span><span>Big-button, simple interface — built deliberately plain for engineers on tools, not a "modern" app that's hard to use fast</span></div>
+      <div class="check"><span class="tick">✓</span><span>Sat-nav built in via Google Maps or Waze, pulling the address automatically from the job — no double typing</span></div>
+      <div class="check"><span class="tick">✓</span><span>Two-way office messaging in the app, with quick-reply options — reduces phone tag between office and engineers on site</span></div>
+      <div class="check"><span class="tick">✓</span><span>Speech-to-text on every report field — no keyboard needed with gloves on</span></div>
+      <div class="check"><span class="tick">✓</span><span>Van stock by search or barcode, plus visibility of nearby engineers' van stock so they're not making an extra merchant run</span></div>
+      <div class="check"><span class="tick">✓</span><span>Help button straight through to the 24/7 UK support line — engineers aren't calling you, they're calling us</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bc-white);padding:0;">
+  <div class="section">
+    <div class="reveal">
+      <div class="section-tag">The Real Difference</div>
+      <h2>Same reactive call-out. Very different system underneath it.</h2>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="ba-card ba-bad">
+        <div class="ba-tag">❌ Today</div>
+        <p>Job tracking and vehicle tracking are two separate products, paid separately, that don't reconcile against each other.</p>
+        <p>Dispatch decided manually — checking the tracker, then deciding who's best based on memory and a paper diary.</p>
+        <p>Quotes and invoices sent manually by email, tracked in a book.</p>
+        <p>Stock tracked manually in the yard — no visibility on quantities or usage.</p>
+        <p>Out-of-hours calls sometimes missed entirely, or answered without knowing who's calling.</p>
+      </div>
+      <div class="ba-card ba-good">
+        <div class="ba-tag">✓ BigChange</div>
+        <p>One platform, one bill — vehicle tracking hardwired in and automatically reconciled against timesheets and job costs.</p>
+        <p>AI scheduling assistant recommends the right-skilled, closest, most cost-effective engineer in seconds.</p>
+        <p>Quotes and invoices built from templates, sent digitally, with automatic QuickBooks export.</p>
+        <p>Stock and van parts tracked automatically, with reorder alerts before you run short.</p>
+        <p>Pulse (coming) — an AI agent that answers out-of-hours calls, checks engineer availability and books the job straight into the diary.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="implementation">
+  <div class="reveal">
+    <div class="section-tag">Implementation & Support</div>
+    <h2>One consultant, one system — not a five-figure setup fee and a manual.</h2>
+    <p class="subtitle">Implementation is UK-based and hands-on, run out of the same Leeds office as support — not a generic onboarding pack and good luck.</p>
+  </div>
+
+  <div class="grid-2 reveal" style="margin-bottom:32px;">
+    <div style="background:#fff3f3;border-radius:var(--bc-radius);padding:28px;border:1px solid #fca5a5;">
+      <div style="font-size:12px;font-weight:700;color:#b91c1c;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">❌ What you've seen with other systems</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:13px;color:#7f1d1d;">Credits and bolt-on modules — every extra feature is another charge, never quite sure what you're spending.</div>
+        <div style="font-size:13px;color:#7f1d1d;">A persistent sales process before you'd even decided, which put you off the last time you looked at BigChange.</div>
+        <div style="font-size:13px;color:#7f1d1d;">Two separate contracts and two separate support lines for job tracking and vehicle tracking.</div>
+      </div>
+    </div>
+    <div style="background:rgba(40,226,137,.05);border-radius:var(--bc-radius);padding:28px;border:1px solid rgba(40,226,137,.2);">
+      <div style="font-size:12px;font-weight:700;color:#1a8a5a;text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">✓ BigChange Premier Support</div>
+      <div style="display:flex;flex-direction:column;gap:9px;">
+        <div style="font-size:13px;color:var(--bc-gray-800);">24/7 UK-based support, phone-first, out of Leeds — engineers get a direct line from the app, no need to call you first.</div>
+        <div style="font-size:13px;color:var(--bc-gray-800);">One UK-based implementation consultant builds the system in with you — job sheets, worksheets and quote templates from your own branding.</div>
+        <div style="font-size:13px;color:var(--bc-gray-800);">One user-per-month price, no credits, no metered add-ons — everything you've seen in the demo is included.</div>
+        <div style="font-size:13px;color:var(--bc-gray-800);">A dedicated account manager once you're live, for the life of the contract.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(135deg,var(--bc-dark),#0d2952);border-radius:var(--bc-radius);padding:36px;display:flex;align-items:start;gap:28px;" class="reveal">
+    <div style="flex-shrink:0;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--bc-blue),var(--bc-green));display:flex;align-items:center;justify-content:center;font-size:24px;">⭐</div>
+    <div style="flex:1;">
+      <div style="font-size:11px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">BigChange Premier Support · £133/month</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin-bottom:16px;">No five-figure setup fee — that's gone. One monthly support charge covers implementation.</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;">
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ UK-based implementation consultant</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ Job sheets, worksheets & quote templates built with you</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ Dedicated account manager once live</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ Vehicle tracking de-fit & hardwired install, free</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ QuickBooks export, configured for you</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">✓ 24/7 UK-based support, Leeds</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section" id="cases">
+  <div class="reveal">
+    <div class="section-tag">In Good Company</div>
+    <h2>Trades businesses running the same reactive/planned mix.</h2>
+    <p class="subtitle">Job — worth a look before tomorrow's call. Real BigChange customers on a similar split of reactive and planned work, with vehicle tracking and job management brought together the same way.</p>
+  </div>
+  <div class="case-grid">
+    <a href="https://www.bigchange.com/success-stories/bigchange-drives-efficiency-at-fords-south-west" target="_blank" rel="noreferrer" class="case-card reveal">
+      <div class="case-thumb" style="display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bc-dark),#0d2952);">
+        <div style="font-size:44px;">⚡</div>
+        <div style="position:absolute;top:10px;right:10px;background:rgba(0,114,206,.9);color:#fff;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;">Read</div>
+      </div>
+      <div class="case-body">
+        <div class="sector">Plumbing & Electrical · SME</div>
+        <h4>Fords South West — 2 hours a day, per engineer, back</h4>
+        <p>Trades SME on the same kind of reactive/planned mix as SCS. "A conservative estimate is that using BigChange to automate routine tasks has reduced the number of hours per engineer, per day, spent on administration by at least two." — Jack Caine, Contracts Manager.</p>
+        <div class="read-more">Read their story →</div>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=ZbH-FsGWAhc" target="_blank" rel="noreferrer" class="case-card reveal">
+      <div class="case-thumb" style="position:relative;">
+        <img src="https://img.youtube.com/vi/ZbH-FsGWAhc/maxresdefault.jpg" alt="Nirvana Maintenance" style="width:100%;height:100%;object-fit:cover;"/>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-left:15px solid #0A2240;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;"></div></div></div>
+        <div style="position:absolute;top:10px;right:10px;background:rgba(220,0,0,.9);color:#fff;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;">▶ Watch</div>
+      </div>
+      <div class="case-body">
+        <div class="sector">Family-run SME · Building Maintenance</div>
+        <h4>Nirvana Maintenance — 650% growth in turnover</h4>
+        <p>Family-run maintenance business that consolidated onto BigChange from a job-logic-style credit system. 650% increase in turnover, 75% of financial workflows automated. MD Darren Waitson talks through the transition.</p>
+        <div class="read-more">Watch their story →</div>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=VtWMHspNUXg" target="_blank" rel="noreferrer" class="case-card reveal">
+      <div class="case-thumb" style="position:relative;">
+        <img src="https://img.youtube.com/vi/VtWMHspNUXg/maxresdefault.jpg" alt="Pinnacle Group" style="width:100%;height:100%;object-fit:cover;"/>
+        <div style="position:absolute;inset:0;background:rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;"><div style="width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;"><div style="width:0;height:0;border-left:15px solid #0A2240;border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;"></div></div></div>
+        <div style="position:absolute;top:10px;right:10px;background:rgba(220,0,0,.9);color:#fff;padding:3px 8px;border-radius:4px;font-size:10px;font-weight:700;">▶ Watch</div>
+      </div>
+      <div class="case-body">
+        <div class="sector">Facilities Management · Reactive & Planned · Multi-site</div>
+        <h4>Pinnacle Group — reactive and planned in one system</h4>
+        <p>National FM business on the same reactive/planned split you run. Since BigChange: real-time reporting, productivity gains, reduced costs and higher client satisfaction — feeding directly into contract wins.</p>
+        <div class="read-more">Watch their story →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="pricing">
+  <div class="reveal">
+    <div class="section-tag">Pricing — two options, your call</div>
+    <h2>£37/user if we can get this over the line tomorrow. £50–55/user next month.</h2>
+    <p class="subtitle">List price is £80/user. As discussed, I can match what you're paying today — £37/user — if you're able to give us the green light before end of day tomorrow. I need to confirm this internally, but that's what I'm pushing for. Beyond tomorrow, this moves to next month's rate, which is £50–55/user.</p>
+  </div>
+
+  <div class="grid-2 reveal" style="max-width:960px;">
+    <div class="price-box-dark">
+      <div style="font-size:10.5px;font-weight:700;color:var(--bc-green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;">Everything included in the per-user rate</div>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:start;gap:12px;"><span style="color:var(--bc-green);font-size:16px;flex-shrink:0;line-height:1.3;">✓</span><div><div style="font-size:13px;font-weight:700;color:#fff;">Hardwired vehicle tracking + install — FREE</div><div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">De-fit of your current trackers included, no extra hardware cost</div></div></div>
+        <div style="display:flex;align-items:start;gap:12px;"><span style="color:var(--bc-green);font-size:16px;flex-shrink:0;line-height:1.3;">✓</span><div><div style="font-size:13px;font-weight:700;color:#fff;">QuickBooks export — FREE</div><div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">No separate integration charge</div></div></div>
+        <div style="display:flex;align-items:start;gap:12px;"><span style="color:var(--bc-green);font-size:16px;flex-shrink:0;line-height:1.3;">✓</span><div><div style="font-size:13px;font-weight:700;color:#fff;">No credits, no bolt-on modules</div><div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">One user-per-month cost, nothing metered on top</div></div></div>
+        <div style="display:flex;align-items:start;gap:12px;"><span style="color:var(--bc-green);font-size:16px;flex-shrink:0;line-height:1.3;">✓</span><div><div style="font-size:13px;font-weight:700;color:#fff;">£0 upfront — the setup fee is gone</div><div style="font-size:12px;color:rgba(255,255,255,.45);margin-top:3px;">No five-figure setup cost. Monthly subscription only</div></div></div>
+      </div>
+    </div>
+
+    <div class="price-box-main">
+      <div style="padding:16px 24px;background:linear-gradient(135deg,var(--bc-dark),#0d2952);">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bc-green);">SCS Group · 24 field + 4 office</div>
+        <div style="font-size:13px;font-weight:600;color:#fff;margin-top:2px;">If confirmed by end of day tomorrow</div>
+      </div>
+      <div style="padding:14px 22px;border-bottom:1px solid var(--bc-gray-100);display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:13px;font-weight:600;color:var(--bc-dark);">24 × field licences</div><div style="font-size:11px;color:var(--bc-gray-400);">Includes vehicle tracking & installation</div></div>
+        <div style="text-align:right;"><div style="font-size:10px;color:var(--bc-gray-400);text-decoration:line-through;">£79.95</div><div style="font-size:13px;font-weight:700;color:var(--bc-blue);">£37/user</div></div>
+      </div>
+      <div style="padding:14px 22px;border-bottom:1px solid var(--bc-gray-100);display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:13px;font-weight:600;color:var(--bc-dark);">4 × back office licences</div><div style="font-size:11px;color:var(--bc-gray-400);">Same rate as field</div></div>
+        <div style="text-align:right;"><div style="font-size:10px;color:var(--bc-gray-400);text-decoration:line-through;">£79.95</div><div style="font-size:13px;font-weight:700;color:var(--bc-blue);">£37/user</div></div>
+      </div>
+      <div style="padding:14px 22px;border-bottom:1px solid var(--bc-gray-100);display:flex;justify-content:space-between;align-items:center;">
+        <div><div style="font-size:13px;font-weight:600;color:var(--bc-dark);">Premier Support</div><div style="font-size:11px;color:var(--bc-gray-400);">Implementation, account manager, 24/7 support</div></div>
+        <div style="font-size:13px;font-weight:700;color:var(--bc-blue);">£133/month</div>
+      </div>
+      <div style="padding:10px 22px;background:rgba(40,226,137,.03);border-bottom:1px solid rgba(40,226,137,.1);display:flex;justify-content:space-between;align-items:center;">
+        <div style="font-size:12px;color:var(--bc-gray-600);">Upfront cost</div>
+        <span style="background:rgba(40,226,137,.1);color:#1a8a5a;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;">£0</span>
+      </div>
+      <div style="padding:24px;text-align:center;background:linear-gradient(135deg,var(--bc-dark),#0d2952);">
+        <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;">Total monthly (exc. VAT) — matches what you pay today</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:52px;color:var(--bc-green);line-height:1;">£1,169/mo</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.35);margin-top:4px;">28 users × £37 + £133 Premier Support</div>
+        <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);">
+          <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">If we miss tomorrow — next month's rate</div>
+          <div style="font-size:15px;font-weight:700;color:rgba(255,255,255,.75);">£50–55/user <span style="font-weight:400;color:rgba(255,255,255,.4);">+ £133 Premier Support</span></div>
+        </div>
+      </div>
+      <div style="padding:16px 22px;background:#fffbeb;border-top:1px solid #fde68a;">
+        <div style="font-size:12px;color:#92400e;line-height:1.65;">⏳ £37/user is tied to confirming before end of day tomorrow — end of financial year, end of quarter, end of month all line up right now. I have to confirm this internally, but it's what I'm pushing for on the call tomorrow at half one.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bc-white);padding:0;">
+  <div class="section" id="next">
+    <div class="reveal">
+      <div class="section-tag">Next Steps</div>
+      <h2>Tomorrow, 1:30pm — phone call to confirm.</h2>
+      <p class="subtitle">Job — you said it yourself, you'd rather be tied in and done than keep having meetings. Have a look through this proposal and the case studies, and let's see where we land on the call tomorrow.</p>
+    </div>
+
+    <div class="reveal" style="margin-bottom:40px;display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;">
+      <div class="step-card active-step">
+        <div class="step-num">Tomorrow, 1:30pm</div>
+        <div class="step-title">Phone call to confirm</div>
+        <div class="step-body">Confirm whether you're able to go ahead — locks in £37/user, vehicle tracking installed free, no upfront cost.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">On the green light</div>
+        <div class="step-title">Paperwork, then straight to onboarding</div>
+        <div class="step-body">Contract over immediately, trackers de-fitted and hardwired in, and your UK-based implementation consultant booked in to start building job sheets and worksheets with you.</div>
+      </div>
+    </div>
+
+    <div class="contact-section reveal">
+      <div class="contact-avatar">MF</div>
+      <div>
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:4px;">Matthew Fryer</h3>
+        <div style="font-size:13px;color:var(--bc-green);font-weight:600;margin-bottom:14px;">Account Executive — BigChange</div>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;">
+          <span style="font-size:13px;color:rgba(255,255,255,.75);">📧 <a href="mailto:matthew.fryer@bigchange.com" style="color:rgba(255,255,255,.75);text-decoration:none;">matthew.fryer@bigchange.com</a></span>
+          <span style="font-size:13px;color:rgba(255,255,255,.75);">📞 <a href="tel:+447951081056" style="color:rgba(255,255,255,.75);text-decoration:none;">07951 081 056</a></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <img src="https://www.martinport.com/wp-content/uploads/2022/05/bigchange-logo.webp" alt="BigChange" style="height:22px;opacity:.35;margin-bottom:14px;display:block;margin-left:auto;margin-right:auto;"/>
+  This proposal was prepared exclusively for SCS Group. Confidential.
+</div>
+
+<script>
+function showTab(id,btn){
+  document.querySelectorAll('.feature-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.ftab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).style.display='block';btn.classList.add('active');
+}
+const obs=new IntersectionObserver(e=>{e.forEach((e,i)=>{e.isIntersecting&&(setTimeout(()=>e.target.classList.add('visible'),i*80),obs.unobserve(e.target))})},{threshold:.05});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+</script>
+</body>
+</html>
